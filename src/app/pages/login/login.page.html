@@ -1,0 +1,39 @@
+<!-- <ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="wrapper">
+    <div class="welcome">
+      Welcome
+    </div>
+
+    <ion-card class="box_form">
+      <ion-card-content>
+        <h2>Login</h2>
+        <form [formGroup]="formLogin" (ngSubmit)="auth()">
+          <ion-item>
+            <ion-label position="floating">Username</ion-label>
+            <ion-input type="text" formControlName="username" placeholder="Username"></ion-input>
+          </ion-item>
+          <ion-note class="ion-text-left" color="danger" *ngIf="usernameField?.hasError('pattern')">
+            <p class="error">* No se aceptan números o carácteres especiales</p>
+          </ion-note>
+
+          <ion-item>
+            <ion-label position="floating">Email Address</ion-label>
+            <ion-input type="email" class="email_field" formControlName="email" placeholder="Email Address"></ion-input>
+          </ion-item>
+          <ion-note class="ion-text-left" color="danger"
+            *ngIf="emailField?.hasError('email') || emailField?.hasError('pattern')">
+            <p class="error">* No parece un correo valido</p>
+          </ion-note>
+
+          <ion-button class="btn" type="submit" expand="block" [disabled]="formLogin.invalid">INGRESAR</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

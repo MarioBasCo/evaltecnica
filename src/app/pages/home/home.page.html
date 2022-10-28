@@ -1,0 +1,23 @@
+<app-header titulo="Home"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header color="medium">
+      <ion-card-title>
+        Informacion del usuario
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="ion-text-center ion-padding-top">
+        <ion-text style="font-size: 1.33em;" color="secondary">{{user.name}}</ion-text>
+      </div>
+      <br>
+      Username: {{user.username}} <br>
+      Email: {{user.email}} <br>
+      Phone: {{user.phone}} <br>
+      Address: {{user.address.city}}, {{user.address.street}}, {{user.address.suite}} <br>
+      Website: {{user.website}} <br>
+      Company: {{user.company.name}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

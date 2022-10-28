@@ -1,0 +1,21 @@
+<app-header titulo="List"></app-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of items">
+    <ion-card-content>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-img [src]="item.img"></ion-img>
+        </ion-thumbnail>
+        <div>
+          <p><span style="font-size: 1.33em;">{{item.name}}</span></p>
+          <p><b>Address:</b> {{item.address.city}}, {{item.address.street}}</p>
+          <p><b>Phone:</b> {{item.phone}}</p>
+          <p><b>Website:</b> {{item.website}}</p>
+        </div>
+        
+      </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
